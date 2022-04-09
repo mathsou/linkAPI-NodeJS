@@ -24,15 +24,15 @@ const jobModel = database.define(
       type: INTEGER.UNSIGNED,
       allowNull: false,
     },
-    recurenceTypeId: {
+    recurrenceTypeId: {
       type: INTEGER.UNSIGNED,
       allowNull: false,
     },
-    recurenceValue: {
+    recurrenceValue: {
       type: STRING(80),
       allowNull: false,
     },
-    recurencePeriod: {
+    recurrencePeriod: {
       type: STRING(80),
       allowNull: false,
     }
