@@ -33,17 +33,6 @@ module.exports = {
     const rowsAffected = await userRepository.updateUser(id, payload);
     return rowsAffected[0];
   },
-  async updateUser(id, fields) {
-    let payload = {
-      name: fields.name,
-      email: fields.email,
-      phone: fields.phone
-    };
-    if (fields.password)
-      payload.password = md5(fields.password);
-    const rowsAffected = await userRepository.updateUser(id, payload);
-    return rowsAffected[0];
-  },
   async deleteUser(id) {
     const rowsAffected = await userRepository.deleteUser(id);
     return rowsAffected;
