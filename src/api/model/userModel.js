@@ -16,6 +16,10 @@ const userModel = database.define(
       type: STRING(50),
       allowNull: false,
     },
+    email: {
+      type: STRING(80),
+      allowNull: false,
+    },
     password: {
       type: STRING(40),
       allowNull: false,
