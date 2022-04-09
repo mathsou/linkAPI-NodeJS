@@ -19,6 +19,7 @@ const recurenceTypeModel = database.define(
   },
   {
     tableName: "recurencetype",
+    paranoid: true
   }
 );
 

@@ -39,6 +39,7 @@ const jobModel = database.define(
   },
   {
     tableName: "jobs",
+    paranoid: true,
   }
 );
 

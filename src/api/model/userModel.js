@@ -1,7 +1,7 @@
 const database = require("../../database");
 const Sequelize = require("sequelize");
 const { DataTypes } = Sequelize;
-const { INTEGER, STRING, NUMBER } = DataTypes;
+const { INTEGER, STRING } = DataTypes;
 
 const userModel = database.define(
   "user",
@@ -25,12 +25,13 @@ const userModel = database.define(
       allowNull: false,
     },
     phone: {
-      type: NUMBER,
+      type: STRING(11),
       allowNull: false,
     },
   },
   {
     tableName: "users",
+    paranoid: true
   }
 );
 
