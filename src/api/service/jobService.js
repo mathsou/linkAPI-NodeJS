@@ -2,9 +2,9 @@ const jobRepository = require("../repository/jobRepository");
 
 
 module.exports = {
-  async findJobs() {
-    const rows = await jobRepository.findJobs();
-    return { data: rows };
+  async findJobs(limit, offset) {
+    const {rows, count} = await jobRepository.findJobs(limit, offset);
+    return { data: rows, count };
   },
   async findOneJob(id) {
     const rows = await jobRepository.findOneJob(id);

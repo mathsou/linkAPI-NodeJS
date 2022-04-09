@@ -3,7 +3,9 @@ const jobService = require("../service/jobService");
 module.exports = {
   async findAll(req, res) {
     const { query } = req;
-    const jobs = await jobService.findJobs();
+    const limit = Number(query.limit) || 1000;
+    const offset = Number(query.offset) || 0;
+    const jobs = await jobService.findJobs(limit, offset);
     res.status(200).json(jobs);
   },
   async findOne(req, res) {

@@ -3,9 +3,9 @@ const userRepository = require("../repository/userRepository");
 
 
 module.exports = {
-  async findUsers() {
-    const rows = await userRepository.findUsers();
-    return { data: rows };
+  async findUsers(limit, offset) {
+    const {rows, count} = await userRepository.findUsers(limit, offset);
+    return { data: rows, count };
   },
   async findOneUser(id) {
     const rows = await userRepository.findOneUser(id);

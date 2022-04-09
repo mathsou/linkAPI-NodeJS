@@ -3,7 +3,9 @@ const userService = require("../service/userService");
 module.exports = {
   async findAll(req, res) {
     const { query } = req;
-    const users = await userService.findUsers();
+    const limit = Number(query.limit) || 1000;
+    const offset = Number(query.offset) || 0;
+    const users = await userService.findUsers(limit, offset);
     res.status(200).json(users);
   },
   async findOne(req, res) {
