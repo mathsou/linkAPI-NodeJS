@@ -16,7 +16,9 @@
     "express": "^4.17.1",
     "md5": "^2.3.0",
     "mysql2": "^2.2.5",
-    "sequelize": "^6.3.5"
+    "sequelize": "^6.3.5",
+    "sharp": "^0.30.3",
+    "yup": "^0.32.11"
   },
   "keywords": [],
   "author": "",
