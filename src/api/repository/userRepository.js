@@ -1,11 +1,8 @@
 const userModel = require("../model/userModel");
 
 module.exports = {
-  async findUsers(limit, offset) {
-    return await userModel.findAndCountAll({
-      limit,
-      offset,
-    });
+  async findUsers() {
+    return await userModel.findAndCountAll();
   },
   async findOneUser(id) {
     return await userModel.findOne({
