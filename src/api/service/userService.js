@@ -3,8 +3,12 @@ const userRepository = require("../repository/userRepository");
 
 
 module.exports = {
-  async findUsers(limit, offset) {
-    const { rows } = await userRepository.findUsers();
+  async findUsers(name, start, end) {
+    name = name ? "%"+name.replace(" ", "%")+"%" : "%%";
+    start = start ? new Date(start) : new Date("1970-01-01 00:00:00");
+    end = end ? new Date(end) : new Date("2100-01-01 00:00:00");
+    console.log(name)
+    const { rows } = await userRepository.findUsers(name, start, end);
     return { data: rows };
   },
   async findOneUser(id) {

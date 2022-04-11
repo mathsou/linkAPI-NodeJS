@@ -3,8 +3,8 @@ const sequelize =require("sequelize");
 const { DataTypes } = sequelize;
 const { INTEGER, STRING } = DataTypes;
 
-const recurenceTypeModel = database.define(
-  "recurenceType",
+const recurrenceTypeModel = database.define(
+  "recurrenceType",
   {
     id: {
       type: INTEGER.UNSIGNED,
@@ -18,9 +18,9 @@ const recurenceTypeModel = database.define(
     }
   },
   {
-    tableName: "recurencetype",
+    tableName: "recurrencetype",
     paranoid: true
   }
 );
 
-module.exports = recurenceTypeModel;
+module.exports = recurrenceTypeModel;

@@ -1,7 +1,7 @@
 const jobModel = require("../model/jobModel");
 
 module.exports = {
-  async findJobs(limit, offset) {
+  async findJobs() {
     return await jobModel.findAll();
   },
   async findOneJob(id) {

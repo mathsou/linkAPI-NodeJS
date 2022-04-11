@@ -3,7 +3,7 @@ const jobRepository = require("../repository/jobRepository");
 
 module.exports = {
   async findJobs() {
-    const { rows } = await jobRepository.findJobs();
+    const rows = await jobRepository.findJobs();
     return { data: rows };
   },
   async findOneJob(id) {
@@ -25,7 +25,6 @@ module.exports = {
     const rowsAffected = await jobRepository.updateJob(id, {
       name: fields.name,
       status: fields.status,
-      userId: fields.userId,
       recurrenceTypeId: fields.recurrenceTypeId,
       recurrenceValue: fields.recurrenceValue,
       recurrencePeriod: fields.recurrencePeriod,
