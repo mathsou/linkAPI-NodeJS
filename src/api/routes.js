@@ -26,7 +26,7 @@ routes.put("/users/:id", updateUserValidator, userController.update);
 routes.get("/jobs", jobController.findAll);
 routes.get("/jobs/:id", jobController.findOne);
 routes.post("/jobs", registerJobValidator, jobController.create);
-routes.delete("/jobs/:id", deleteUserValidator, jobController.delete);
+routes.delete("/jobs/:id", deleteJobValidator, jobController.delete);
 routes.put("/jobs/:id", updateJobValidator, jobController.update);
 
 routes.get("/recurrenceType", typeController.findAll);
