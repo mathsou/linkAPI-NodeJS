@@ -1,12 +1,35 @@
 const jobModel = require("../model/jobModel");
+const userModel = require("../model/userModel");
+const recurrenceTypeModel = require("../model/recurrenceTypeModel");
 
 module.exports = {
   async findJobs() {
-    return await jobModel.findAll();
+    return await jobModel.findAll({
+      attributes: [
+        'id',
+        'name',
+        'status',
+        'userId',
+        'recurrenceTypeId',
+        'recurrenceValue',
+        'recurrencePeriod',
+        'createdAt'
+      ],
+    });
   },
   async findOneJob(id) {
     return await jobModel.findOne({
-      where: {id}
+      attributes: [
+        'id',
+        'name',
+        'status',
+        'userId',
+        'recurrenceTypeId',
+        'recurrenceValue',
+        'recurrencePeriod',
+        'createdAt'
+      ],
+      where: { id }
     });
   },
   async registerJob(payload) {
@@ -14,7 +37,7 @@ module.exports = {
   },
   async updateJob(id, payload) {
     return await jobModel.update(payload, {
-      where: {id}
+      where: { id }
     });
   },
   async deleteJob(id) {
