@@ -44,7 +44,6 @@ module.exports = {
             "'name' deve conter somente caracteres válidos."
           ),
         email: string("email deve ser uma string")
-          .email("digite um email válido")
           .required("email é um campo obrigatório"),
         password: string("senha deve ser uma string")
           .required("senha é um campo obrigatório"),

@@ -1,4 +1,4 @@
-const { object, string,  } = require('yup');
+const { object, string, number} = require('yup');
 
 
 module.exports = {
@@ -11,7 +11,7 @@ module.exports = {
             "[A-zÀ-ÿ+\s]",
             "'name' deve conter somente caracteres válidos."
           ),
-        status: mixed().oneOf([1, 0], "campo status só pode conter 0 ou 1")
+        status: number().oneOf([1, 0], "campo status só pode conter 0 ou 1")
           .required("status é um campo obrigatório"),
         userId: number("userId deve ser numérico")
           .required("userId é um campo obrigatório"),
@@ -44,10 +44,8 @@ module.exports = {
             "[A-zÀ-ÿ+\s]",
             "'name' deve conter somente caracteres válidos."
           ),
-        status: mixed().oneOf([1, 0], "campo status só pode conter 0 ou 1")
+        status: number().oneOf([1, 0], "campo status só pode conter 0 ou 1")
           .required("status é um campo obrigatório"),
-        userId: number("userId deve ser numérico")
-          .required("userId é um campo obrigatório"),
         recurrenceTypeId: number("recurrenceTypeId deve ser numérico")
           .required("recurrenceTypeId é um campo obrigatório"),
         recurrenceValue: string("recurrenceValue deve ser string")
