@@ -1,6 +1,6 @@
 const userModel = require("../userModel");
 const recurrenceTypeModel = require("../recurrenceTypeModel");
-const jobModel = require("../clientModel");
+const jobModel = require("../jobModel");
 
 
 jobModel.belongsTo(userModel, {
