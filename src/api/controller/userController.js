@@ -2,9 +2,7 @@ const userService = require("../service/userService");
 
 module.exports = {
   async findAll(req, res) {
-    const { query } = req;
-    console.log(query);
-    const users = await userService.findUsers(query.name, query.start, query.end);
+    const users = await userService.findUsers();
     res.status(200).json(users);
   },
   async findOne(req, res) {

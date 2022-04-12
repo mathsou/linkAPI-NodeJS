@@ -2,13 +2,8 @@ const userModel = require("../model/userModel");
 const { Op } = require('sequelize');
 
 module.exports = {
-  async findUsers(name, start, end) {
-    return await userModel.findAndCountAll({
-      where: {
-        name: {[Op.like]: name},
-        createdAt: {[Op.between]: [start, end]}
-      }
-    });
+  async findUsers() {
+    return await userModel.findAndCountAll();
   },
   async findOneUser(id) {
     return await userModel.findOne({
